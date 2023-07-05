@@ -1,0 +1,89 @@
+.editor
+{
+    width: 70%;
+    margin: 0px 15vw 0px 15vw;
+}
+.texteditor
+{
+   
+   display: block;
+}
+#editor
+{
+    outline: blue solid;
+}
+.editor-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 200px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+.sample-blog
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.ck-editor__editable {
+    background-color: rgb(54, 42, 42);
+}
+.btn
+{
+    all: unset;
+    margin: 30px;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+}
+.new-blog 
+{
+   
+    top: 0%;
+    width: 500px;
+    max-height: 500px;
+    min-height: 200px;
+    overflow-y: hidden;
+    height: fit-content;
+    background-color: var(--blog-color);
+    border-radius: 5px;
+}
+.sample-blog-wrapper
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+.btn2
+{
+    opacity: 0;
+    pointer-events: none;
+}
+.show-post-btn
+{
+    opacity: 1;
+    pointer-events: all;
+}
+.blog-body img
+{
+    width: 80%;
+    height: 70%;
+    object-fit: contain;
+}
+.blog-body p img
+{
+    all: unset;
+    width: 80%;
+    height: 70%;
+    max-height: 500px;
+    object-fit: contain;
+}
+.blog-body p
+{
+    padding: 5% 0px 0px 10px;
+}
+.blog-body ul
+{
+    list-style: disc;
+}

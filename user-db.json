@@ -1,0 +1,70 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "hellen": {
+        "profile": "",
+        "password": "hellen",
+        "email": "hellen@gmail.com"
+      }
+    },
+    {
+      "small giant": {
+        "profile": "",
+        "password": "bitblog",
+        "email": "smallgiant022@gmail.com"
+      },
+      "id": 2,
+      "post": [
+        {
+          "content": "<p><a href=\"https://www.quora.com/What-are-the-best-project-management-tools-for-managers\" target=\"_blank\">What are the best project management tools for managers?</a></p>\n\n<p>As a manager at Asana, I use Asana to keep my team coordinated and connected—especially in this time of&nbsp;<a href=\"https://asana.com/resources/three-concepts-managing-remotely?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools%20for%20managers\" target=\"_blank\">increased remote work</a>. Right now, staying connected and organized is more important than ever, which is why Asana’s clarity and ease of collaboration helps my team do better work from anywhere.</p>\n\n<p>If you’re managing a team or program, you likely have multiple projects in progress at the same time. But keeping track of all the moving pieces quickly gets complicated. Without a good process for managing multiple projects, it’s hard to know what work to prioritize, how to help your team effectively manage their workload, and whether everything is getting done on time.</p>\n\n<p>Fortunately, there is a better way. Whether you’re struggling to organize and manage work across multiple projects or ensuring your team has a manageable workload,&nbsp;<a href=\"https://asana.com/homepage?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools%20for%20managers\" target=\"_blank\">Asana</a>&nbsp;can help you keep everything on track.</p>\n\n<p>Plan and manage all of your team’s projects in the same place</p>\n\n<p>When your team has a central source of truth, you can move from thinking one project at a time to looking at the entire system in which you operate. With a bird’s-eye view of everything going on—and how your work connects to broader initiatives—your team can become more effective and less stressed.</p>\n",
+          "author": "small giant",
+          "profile": "https://instagram.fmba5-1.fna.fbcdn.net/v/t51.2885…gq8uKcP1oZB-qWQ2Ji04iA&oe=64A9A9BC&_nc_sid=8b3546"
+        },
+        {
+          "content": "<p><a href=\"https://www.quora.com/What-are-the-best-project-management-tools-for-managers\" target=\"_blank\">What are the best project management tools for managers?</a></p>\n\n<p>As a manager at Asana, I use Asana to keep my team coordinated and connected—especially in this time of&nbsp;<a href=\"https://asana.com/resources/three-concepts-managing-remotely?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools%20for%20managers\" target=\"_blank\">increased remote work</a>. Right now, staying connected and organized is more important than ever, which is why Asana’s clarity and ease of collaboration helps my team do better work from anywhere.</p>\n\n<p>If you’re managing a team or program, you likely have multiple projects in progress at the same time. But keeping track of all the moving pieces quickly gets complicated. Without a good process for managing multiple projects, it’s hard to know what work to prioritize, how to help your team effectively manage their workload, and whether everything is getting done on time.</p>\n\n<p>Fortunately, there is a better way. Whether you’re struggling to organize and manage work across multiple projects or ensuring your team has a manageable workload,&nbsp;<a href=\"https://asana.com/homepage?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools%20for%20managers\" target=\"_blank\">Asana</a>&nbsp;can help you keep everything on track.</p>\n\n<p>Plan and manage all of your team’s projects in the same place</p>\n\n<p>When your team has a central source of truth, you can move from thinking one project at a time to looking at the entire system in which you operate. With a bird’s-eye view of everything going on—and how your work connects to broader initiatives—your team can become more effective and less stressed.</p>\n",
+          "author": "small giant",
+          "profile": ""
+        }
+      ]
+    },
+    {
+      "small giant": {
+        "profile": "",
+        "password": "bitblog",
+        "email": "smallgiant022@gmail.com"
+      },
+      "id": 3
+    },
+    {
+      "sam": {
+        "profile": "",
+        "password": "1234",
+        "email": "smallgiant022@gmail.com"
+      },
+      "id": 4
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "author": "",
+      "profile": "",
+      "content": ""
+    },
+    {
+      "newPost": "small giant",
+      "id": 2
+    },
+    {
+      "name": "sdsdv",
+      "iko": "cvyc",
+      "id": 3
+    },
+    {
+      "name": "sdsdv",
+      "iko": "cvyc",
+      "id": 5
+    }
+  ]
+}
