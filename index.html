@@ -6,22 +6,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="style sheets/style sheet.css">
     <script src="src/main.js" defer></script>
+    <script src="src/menu.js" defer></script>
     <title>Bit Blog</title>
 </head>
 <body>
     <nav class="nav">
         <ul>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-left" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 6l16 0" />
+                <path d="M4 12l10 0" />
+                <path d="M4 18l14 0" />
+              </svg>
+              <h3>Bit Blog</h3>
             <li style="font-size: 20px;">Bit Blog</li>
             <li title="Home"><i class="fa fa-home" aria-hidden="true"></i><hr></li>
             <li><input type="search" class="search" placeholder="Search.."></li>
             <li><i class="fa fa-sun-o theme" aria-hidden="true"></i></li>
             <li title="Create New"><a href="blog.html" class="create-link"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>
-            <li title="Likes"><i class="fa fa-list-ul" aria-hidden="true"></i></li>
-            <li title="Likes"><i class="fa fa-heart" aria-hidden="true"></i></li>
+            <li title="Profile"><a href="profile.html"><i class="fa fa-list-ul" aria-hidden="true"></i></a></li>
         </ul>
     </nav>
+    <div class="mobile-nav">
+        <i class="fa fa-times close" aria-hidden="true"></i>
+        <ul>
+            <li style="font-size: 20px;">Bit Blog</li>
+            <li title="Home"><i class="fa fa-home" aria-hidden="true"><hr></i></li>
+            <li><i class="fa fa-sun-o theme" aria-hidden="true"></i></li>
+            <li title="Create New"><a href="blog.html" class="create-link"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>
+            <li title="Profile"><a href="profile.html"><i class="fa fa-list-ul" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
         <div class="blogs">
-            <section>
+            <section class="blog-w">
                 <div class="blog">
                     <div class="author-detail">
                         <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div><span class="name">Hellen</span>
@@ -57,113 +74,13 @@
                             </div>
                         </section>
                     </div>
-                </div>           
-                         
-                <div class="blog">
-                    <div class="author-detail">
-                        <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div><span class="name">Mark</span>
-                    </div>
-                    <div class="blog-body">
-                        <p>In order for your project management tool to be your team&rsquo;s central source of truth, it has to work for everyone. Individual contributors need to be able to dive into details, managers need to easily gauge&nbsp;<a href="https://asana.com/product/workload?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools" target="_blank">team bandwidth</a>&nbsp;and spot bottlenecks, and senior leaders need a&nbsp;<a href="https://asana.com/product/portfolios?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools" target="_blank">high-level view</a>&nbsp;of how projects are progressing.</p>
-
-<p>Every project in Asana has four views, so every member of your team can find what they need:</p>
-
-<ul>
-	<li>List View:&nbsp;A linear grid view that provides at-a-glance insight into who&rsquo;s doing what by when.</li>
-	<li>Board View:&nbsp;A kanban board view so you can visualize each stage of work and manage&nbsp;<a href="https://asana.com/uses/agile-management?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools" target="_blank">agile</a>&nbsp;teams.</li>
-	<li>Calendar View:&nbsp;A customizable calendar where you can see all tasks in a project and set and adjust due dates.</li>
-	<li>Timeline View:&nbsp;A Gantt-chart style view so you can see how work maps out over time, avoid overlap, and easily identify&nbsp;<a href="https://asana.com/product/timeline?utm_source=quora&amp;utm_medium=pd_cpc&amp;utm_campaign=promoted_answers_july_2020&amp;utm_content=Promoted_answer_best%20PM%20tools" target="_blank">dependencies</a>.</li>
-</ul>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                    </div>
-                    <div class="blog-feedback">
-                        <span class="fb"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-comment" aria-hidden="true"></i></span>
-                        <span class="fb more"></span>
-                    </div>
-                    <div class="comment">
-                        <div class="new-comment">
-                            <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div>
-                            <form method="post" class="form">
-                                <textarea name="comment" class="comment-input" cols="30" rows="1" placeholder="Comment.."></textarea>
-                                <label for="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></label>
-                                <input type="submit" class="btn" >
-                            </form>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div>
-                        <section class="comment-wrapper">
-                            <div class="user-comment">
-                                <div class="comments">
-                                    <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt=""></div>
-                                    <div>
-                                        <div class="user"><br> Hellen</div>
-                                        <div class="comment-body"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, magnam. Saepe facere similique, corrupti, nihil, dolor veniam odio excepturi assumenda fugit adipisci consequatur aspernatur odit illo! Minus doloremque eveniet laboriosam.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>           
-                <div class="blog">
-                    <div class="author-detail">
-                        <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div><span class="name">Mark</span>
-                    </div>
-                    <div class="blog-body">
-                        <img src="https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt="">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                    </div>
-                    <div class="blog-feedback">
-                        <span class="fb"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-comment" aria-hidden="true"></i></span>
-                        <span class="fb more"></span>
-                    </div>
-                    <div class="comment">
-                        <div class="new-comment">
-                            <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div>
-                            <form method="post" class="form">
-                                <textarea name="comment" class="comment-input" cols="30" rows="1" placeholder="Comment.."></textarea>
-                                <label for="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></label>
-                                <input type="submit" class="btn" >
-                            </form>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div>
-                        <section class="comment-wrapper">
-                            <div class="user-comment">
-                                <div class="comments">
-                                    <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt=""></div>
-                                    <div>
-                                        <div class="user"><br> Hellen</div>
-                                        <div class="comment-body"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, magnam. Saepe facere similique, corrupti, nihil, dolor veniam odio excepturi assumenda fugit adipisci consequatur aspernatur odit illo! Minus doloremque eveniet laboriosam.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>           
+                </div>                    
                 <div class="blog">
                     <div class="author-detail">
                         <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div><span class="name">Mark</span>
                     </div>
                     <div class="blog-body">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                        <p>What is the best project management tool?
-                            I might be a little biased, but as an Asana employee, I believe Asana is the best project management tool. With Asana, my entire team has a central source of truth so they know exactly who’s doing what by when. We can track all of our tasks and stay aligned on our team goals. This has been especially important recently, since it’s enabled our team to manage shifting priorities and take any new challenges in stride.
-                            
-                            Every team is different, so your team might not use Asana exactly like my team does. But every team can benefit from more clarity, coordination, and collaboration at work. Here are five reasons why Asana is the best project management tool for your team:
-                            
-                            1. Quickly get started and get organized
-                            
-                            Spend your time doing skilled work—not getting set up. With Asana’s CSV importer, you can import your current project data from whatever spreadsheet or system you have into Asana in minutes. Here’s a 1-minute video on how.
-                            
-                            Or, if you don’t have a process you currently use, you can also use one of Asana’s 50+ pre-built templates to jumpstart your work.
-                            
-                            2. Manage all of your work with flexible views
-                            
-                            In order for your project management tool to be your team’s central source of truth, it has to work for everyone. Individual contributors need to be able to dive into details, managers need to easily gauge team bandwidth and spot bottlenecks, and senior leaders need a high-level view of how projects are progressing.</p>
-                    </div>
                     <div class="blog-feedback">
                         <span class="fb"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
                         <span class="fb"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
@@ -193,118 +110,7 @@
                         </section>
                     </div>
                 </div>           
-                <div class="blog">
-                    <div class="author-detail">
-                        <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div><span class="name">Mark</span>
-                    </div>
-                    <div class="blog-body">
-                        <img src="https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt="">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                    </div>
-                    <div class="blog-feedback">
-                        <span class="fb"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-comment" aria-hidden="true"></i></span>
-                        <span class="fb more"></span>
-                    </div>
-                    <div class="comment">
-                        <div class="new-comment">
-                            <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div>
-                            <form method="post" class="form">
-                                <textarea name="comment" class="comment-input" cols="30" rows="1" placeholder="Comment.."></textarea>
-                                <label for="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></label>
-                                <input type="submit" class="btn" >
-                            </form>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div>
-                        <section class="comment-wrapper">
-                            <div class="user-comment">
-                                <div class="comments">
-                                    <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt=""></div>
-                                    <div>
-                                        <div class="user"><br> Hellen</div>
-                                        <div class="comment-body"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, magnam. Saepe facere similique, corrupti, nihil, dolor veniam odio excepturi assumenda fugit adipisci consequatur aspernatur odit illo! Minus doloremque eveniet laboriosam.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>           
-                <div class="blog">
-                    <div class="author-detail">
-                        <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div><span class="name">Mark</span>
-                    </div>
-                    <div class="blog-body">
-                        <img src="https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt="">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                    </div>
-                    <div class="blog-feedback">
-                        <span class="fb"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-comment" aria-hidden="true"></i></span>
-                        <span class="fb more"></span>
-                    </div>
-                    <div class="comment">
-                        <div class="new-comment">
-                            <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div>
-                            <form method="post" class="form">
-                                <textarea name="comment" class="comment-input" cols="30" rows="1" placeholder="Comment.."></textarea>
-                                <label for="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></label>
-                                <input type="submit" class="btn" >
-                            </form>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div>
-                        <section class="comment-wrapper">
-                            <div class="user-comment">
-                                <div class="comments">
-                                    <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt=""></div>
-                                    <div>
-                                        <div class="user"><br> Hellen</div>
-                                        <div class="comment-body"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, magnam. Saepe facere similique, corrupti, nihil, dolor veniam odio excepturi assumenda fugit adipisci consequatur aspernatur odit illo! Minus doloremque eveniet laboriosam.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>           
-                <div class="blog">
-                    <div class="author-detail">
-                        <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div><span class="name">$4M</span>
-                    </div>
-                    <div class="blog-body" >
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nemo quis vero deserunt necessitatibus deleniti ullam earum cum, minus mollitia maiores voluptate quasi pariatur nisi veritatis porro id perferendis nobis.</p>
-                    </div>
-                    <div class="blog-feedback">
-                        <span class="fb"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
-                        <span class="fb"><i class="fa fa-comment" aria-hidden="true"></i></span>
-                        <span class="fb more"></span>
-                    </div>
-                    <div class="comment">
-                        <div class="new-comment">
-                            <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" class="user-profile" alt="" title="Hellen"></div>
-                            <form method="post" class="form">
-                                <textarea name="comment" class="comment-input" cols="30" rows="1" placeholder="Comment.."></textarea>
-                                <label for="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i></label>
-                                <input type="submit" class="btn" >
-                            </form>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div>
-                        <section class="comment-wrapper">
-                            <div class="user-comment">
-                                <div class="comments">
-                                    <div class="profile"><img src="	https://i.pinimg.com/236x/72/93/e5/7293e51e3012b0e82f23105222b520b0.jpg" alt=""></div>
-                                    <div>
-                                        <div class="user"><br> Hellen</div>
-                                        <div class="comment-body"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, magnam. Saepe facere similique, corrupti, nihil, dolor veniam odio excepturi assumenda fugit adipisci consequatur aspernatur odit illo! Minus doloremque eveniet laboriosam.</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>           
+                       
             </section>
     </div>
     <div class="log-form-wrapper">

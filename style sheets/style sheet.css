@@ -23,6 +23,10 @@ body
 {
     color: var(--fa-color);
 }
+.nav ul h3 
+{
+    display: none;
+}
 nav
 {
     background-color: var(--nav-color);
@@ -67,25 +71,36 @@ nav .fa
 {
     font-size: 25px;
 }
+.icon-tabler-align-left
+{
+    display: none;
+}
+.mobile-nav
+{
+    display: none;
+}
 /* blogs*/
 .blogs
 {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 100px;
 }
 .blog
 {
-    width: 500px;
+    width: 90vw;
+    max-width: 600px;
     max-height: 500px;
     min-height: 200px;
+    border: solid 1px rgba(30, 30, 30, 0.324);
     overflow-y: hidden;
     height: fit-content;
     background-color: var(--blog-color);
     margin-top: 30px;
     border-radius: 5px;
     position: relative;
-    transition: .7s ease-in-out;
+    transition: .4s ease-in-out;
 }
 .author-detail
 {
@@ -101,6 +116,10 @@ nav .fa
 {
     padding: 10px;
     font-size: small;
+}
+.blog-body
+{
+    margin-top: 10px;
 }
 .blog-body img
 {
@@ -119,7 +138,7 @@ nav .fa
 }
 .blog-body p
 {
-    padding: 0px 0px 5px 10px;
+    padding: 0px 0px 10px 10px;
 }
 .blog-body ul {
     list-style-type: disc;   
@@ -131,10 +150,12 @@ nav .fa
   }
 .blog-body  li
 {
-    margin-left: 40px;
-    margin-bottom: 5px;
+    margin: 10px 40px 10px 40px;
 }
-  
+.blog-body a
+{
+    color: var(--fa-color);
+}
 .blog-feedback
 {
     position: absolute;
@@ -293,4 +314,76 @@ nav .fa
     padding: 5px;
     border-radius: 5px;
     background-color: red;
+}
+.closed-menu
+{
+    transform: translateX(-100%);
+}
+@media (max-width: 600px) {
+    .nav 
+    {
+        height: 50px;
+    }
+    .nav ul 
+    {
+        position: relative;
+        height: 100%;
+        width: 100vw;
+    }
+    .nav ul li
+    {
+        display: none;
+    }
+    .nav ul h3
+    {
+        position: absolute;
+        right: 3%;
+        top: 15%;
+        font-size: 25px;
+        font-weight: normal;
+    }
+    .mobile-nav
+    {
+        display: block;
+        width: 50vw;
+        height: 100vh;
+        position: fixed;
+        top: 0%;
+        background-color: var(--comments-color);
+        z-index: 5;
+        transition: .5s ease-in-out;
+    }
+    .mobile-nav ul
+    {
+        display: block;
+        margin-top: 30px;
+    }
+    .close
+    {
+        position: relative;
+        top: 1%;
+        left: 85%;
+        margin: 5px;
+        font-size: medium;
+    }
+    .mobile-nav ul li
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        font-size: x-large;
+        color: red;
+    }
+    .mobile-nav ul li a 
+    {
+        color: red;
+    }
+    .icon-tabler-align-left
+    {
+        display: block;
+        position: absolute;
+        left: 5%;
+        top: 10%;
+    }
 }

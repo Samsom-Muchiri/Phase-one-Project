@@ -8,21 +8,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
     <!-- <script src="src/main.js" defer></script> -->
     <script src="ckeditor/ckeditor.js" defer></script>
+    <script src="src/menu.js" defer></script>
     <script src="src/create.js" defer></script>
     <title>Add Blog</title>
 </head>
 <body>
     <nav class="nav">
         <ul>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-align-left" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 6l16 0" />
+                <path d="M4 12l10 0" />
+                <path d="M4 18l14 0" />
+              </svg>
+              <h3>Bit Blog</h3>
             <li style="font-size: 20px;">Bit Blog</li>
             <li title="Home"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a> </li>
             <li><input type="search" class="search" placeholder="Search.."></li>
             <li><i class="fa fa-sun-o theme" aria-hidden="true"></i></li>
             <li title="Create New"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><hr></li>
-            <li title="Likes"><i class="fa fa-list-ul" aria-hidden="true"></i></li>
+            <li title="Profile"><a href="profile.html"><i class="fa fa-list-ul" aria-hidden="true"></i></a></li>
             <li title="Likes"><i class="fa fa-heart" aria-hidden="true"></i></li>
         </ul>
     </nav>
+    <div class="mobile-nav">
+        <i class="fa fa-times close" aria-hidden="true" ></i>
+        <ul>
+            <li style="font-size: 20px;">Bit Blog</li>
+            <li title="Home"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li><i class="fa fa-sun-o theme" aria-hidden="true"></i></li>
+            <li title="Create New"><a href="#" class="create-link"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><hr></a></li>
+            <li title="Profile"><a href="profile.html"><i class="fa fa-list-ul" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
     <br>
     <br>
     <br>

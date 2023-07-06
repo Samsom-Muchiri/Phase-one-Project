@@ -99,20 +99,21 @@ function usersData(data){
     postBtn.addEventListener('click', _ =>{
         if (localStorage.getItem('user') !== null) {
             const userName = localStorage.getItem('user');
+            const startIndex = 1
             for (let i = 0; i < data.length; i++) {
               const obj = data[i];
-              
               if (userName in obj) {
+                obj.post.forEach((item, index) => {
+                    item.id = startIndex + index;
+                  });
                 const id = obj.id
                 const postArray = obj.post
                 const author = localStorage.getItem('user')
                 const demoBlog = document.querySelector('.blog-body')
                 const postSrc = demoBlog.innerHTML
                 const profile = obj[userName].profile
-                const newPost = {content: postSrc, author: author, profile: profile}
-                
-                console.log(postArray)
-                postArray.push(newPost)
+                const newPost = {content: postSrc, author: author, profile: profile, postId: 0}
+                postArray.unshift(newPost)
                 postData(id, postArray, author, profile, postSrc)
               }
               
@@ -120,29 +121,32 @@ function usersData(data){
           }
           
     })
-    function postData(id, postArray, author, profile, postSrc){
-        fetch(`${userUrl}/${id}`, {
-            method: 'PATCH',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({post: postArray})
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error));
-
-        //post to blogs
+    function postData(id, postArray, author, profile, postSrc) {
         fetch(`${postUrl}`, {
             method: 'POST',
             headers: {
-            'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({author: author, profile: profile, content: postSrc})
+            body: JSON.stringify({ author: author, profile: profile, content: postSrc })
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(result => {
+                postIdToUser(result);
+            })
             .catch(error => console.error(error));
+    
+        function postIdToUser(result) {
+            postArray[0].postId = result.id;
+            fetch(`${userUrl}/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ post: postArray })
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+        }
     }
-
-}
+}    
