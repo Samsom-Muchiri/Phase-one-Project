@@ -174,13 +174,43 @@ function handleLike() {
 
 // Theme section
 function handleTheme() {
-  const themeButton = document.querySelector('.theme');
   const nav = document.querySelector('.nav');
   const blog = document.querySelectorAll('.blog');
-  themeButton.addEventListener('click', _ => {
-    if (themeButton.classList.contains('fa-sun-o')) {
-      themeButton.classList.remove('fa-sun-o');
-      themeButton.classList.add('fa-moon-o');
+  const themeButton = document.querySelectorAll('.theme');
+  themeButton.forEach(i =>{
+  const storedTheme = localStorage.getItem('theme')
+  if(storedTheme === "dark"){
+      i.classList.remove('fa-moon-o');
+      i.classList.add('fa-sun-o');
+      document.documentElement.style.setProperty("--body-color", 'rgb(30,30,30)');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--comments-color", 'rgb(20, 25, 19)');
+      document.documentElement.style.setProperty("--nav-color", 'rgb(45,45,48)');
+      document.documentElement.style.setProperty("--blog-color", 'rgb(37,40,38)');
+      nav.style.boxShadow = "";
+      blog.forEach(div => {
+        div.style.border = "";
+      });
+  }else{
+    i.classList.remove('fa-sun-o');
+      i.classList.add('fa-moon-o');
+      document.documentElement.style.setProperty("--body-color", '#f6f6f6');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(57, 56, 56)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(42, 40, 40)');
+      document.documentElement.style.setProperty("--comments-color", '#f6f6f6');
+      document.documentElement.style.setProperty("--nav-color", '#ececec');
+      document.documentElement.style.setProperty("--blog-color", '#ffffff');
+      nav.style.boxShadow = "2px 2px 6px rgba(0, 0, 0, 0.2)";
+      blog.forEach(div => {
+        div.style.border = "solid 1px rgba(128, 128, 128, 0.4)";
+      });
+  }
+  i.addEventListener('click', _ => {
+    if (i.classList.contains('fa-sun-o')) {
+      localStorage.setItem('theme', 'light')
+      i.classList.remove('fa-sun-o');
+      i.classList.add('fa-moon-o');
       document.documentElement.style.setProperty("--body-color", '#f6f6f6');
       document.documentElement.style.setProperty("--fa-color", 'rgb(57, 56, 56)');
       document.documentElement.style.setProperty("--font-color", 'rgb(42, 40, 40)');
@@ -192,20 +222,22 @@ function handleTheme() {
         div.style.border = "solid 1px rgba(128, 128, 128, 0.4)";
       });
     } else {
-      themeButton.classList.remove('fa-moon-o');
-      themeButton.classList.add('fa-sun-o');
-      document.documentElement.style.setProperty("--body-color", '');
-      document.documentElement.style.setProperty("--fa-color", '');
-      document.documentElement.style.setProperty("--font-color", '');
-      document.documentElement.style.setProperty("--comments-color", '');
-      document.documentElement.style.setProperty("--nav-color", '');
-      document.documentElement.style.setProperty("--blog-color", '');
+      localStorage.setItem('theme', 'dark')
+      i.classList.remove('fa-moon-o');
+      i.classList.add('fa-sun-o');
+      document.documentElement.style.setProperty("--body-color", 'rgb(30,30,30)');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--comments-color", 'rgb(20, 25, 19)');
+      document.documentElement.style.setProperty("--nav-color", 'rgb(45,45,48)');
+      document.documentElement.style.setProperty("--blog-color", 'rgb(37,40,38)');
       nav.style.boxShadow = "";
       blog.forEach(div => {
         div.style.border = "";
       });
     }
   });
+})
 }
 
 // Show read more
@@ -237,16 +269,19 @@ function showReadMore() {
 
 // Check user
 function checkUser() {
-  const createLink = document.querySelector('.create-link');
+  const createLink = document.querySelectorAll('.create-link');
+  createLink.forEach(div =>{
   const logForm = document.querySelector('.log-form-wrapper');
-  createLink.addEventListener('click', e => {
+  div.addEventListener('click', e => {
     e.preventDefault();
     if (localStorage.getItem('user') !== null) {
-      sendUserToCreateB(e);
+      sendUserToCreateB(e);/* console.log(e.target.parentElement.href) */
+      console.log(localStorage.getItem('user'))
     } else {
       logForm.style.display = 'flex';
     }
   });
+})
 }
 
 function sendUserToCreateB(e) {
@@ -277,7 +312,7 @@ function addUser() {
 function checkUserInLS() {
   const logForm = document.querySelector('.log-form-wrapper');
   const errorMessage = document.querySelector('.status');
-  const e = 'http://127.0.0.1:5500/blog.html'; // User URL to blog.html
+  const e = 'http://127.0.0.1:5500/Project/blog.html'; // User URL to blog.html
   if (localStorage.getItem('user') !== null) {
     window.location.href = e;
   } else {
@@ -287,7 +322,8 @@ function checkUserInLS() {
 }
 
 function addUserToServer(userName, email, pwd) {
-  const value = { profile: "", password: pwd, username: userName, email: email };
+  const userrCridentials = {password: pwd, username: userName, email: email}
+  const value = { [userName]: userrCridentials, post: []};
   fetch("http://localhost:3000/user", {
     method: 'POST',
     body: JSON.stringify(value),

@@ -1,11 +1,26 @@
 // Theme section
 function handleTheme() {
-  const themeButton = document.querySelector('.theme');
   const nav = document.querySelector('.nav');
-  themeButton.addEventListener('click', _ => {
-    if (themeButton.classList.contains('fa-sun-o')) {
-      themeButton.classList.remove('fa-sun-o');
-      themeButton.classList.add('fa-moon-o');
+  const blog = document.querySelectorAll('.blog');
+  const themeButton = document.querySelectorAll('.theme');
+  themeButton.forEach(i =>{
+  const storedTheme = localStorage.getItem('theme')
+  if(storedTheme === "dark"){
+      i.classList.remove('fa-moon-o');
+      i.classList.add('fa-sun-o');
+      document.documentElement.style.setProperty("--body-color", 'rgb(30,30,30)');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--comments-color", 'rgb(20, 25, 19)');
+      document.documentElement.style.setProperty("--nav-color", 'rgb(45,45,48)');
+      document.documentElement.style.setProperty("--blog-color", 'rgb(37,40,38)');
+      nav.style.boxShadow = "";
+      blog.forEach(div => {
+        div.style.border = "";
+      });
+  }else{
+    i.classList.remove('fa-sun-o');
+      i.classList.add('fa-moon-o');
       document.documentElement.style.setProperty("--body-color", '#f6f6f6');
       document.documentElement.style.setProperty("--fa-color", 'rgb(57, 56, 56)');
       document.documentElement.style.setProperty("--font-color", 'rgb(42, 40, 40)');
@@ -13,18 +28,42 @@ function handleTheme() {
       document.documentElement.style.setProperty("--nav-color", '#ececec');
       document.documentElement.style.setProperty("--blog-color", '#ffffff');
       nav.style.boxShadow = "2px 2px 6px rgba(0, 0, 0, 0.2)";
+      blog.forEach(div => {
+        div.style.border = "solid 1px rgba(128, 128, 128, 0.4)";
+      });
+  }
+  i.addEventListener('click', _ => {
+    if (i.classList.contains('fa-sun-o')) {
+      localStorage.setItem('theme', 'light')
+      i.classList.remove('fa-sun-o');
+      i.classList.add('fa-moon-o');
+      document.documentElement.style.setProperty("--body-color", '#f6f6f6');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(57, 56, 56)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(42, 40, 40)');
+      document.documentElement.style.setProperty("--comments-color", '#f6f6f6');
+      document.documentElement.style.setProperty("--nav-color", '#ececec');
+      document.documentElement.style.setProperty("--blog-color", '#ffffff');
+      nav.style.boxShadow = "2px 2px 6px rgba(0, 0, 0, 0.2)";
+      blog.forEach(div => {
+        div.style.border = "solid 1px rgba(128, 128, 128, 0.4)";
+      });
     } else {
-      themeButton.classList.remove('fa-moon-o');
-      themeButton.classList.add('fa-sun-o');
-      document.documentElement.style.setProperty("--body-color", '');
-      document.documentElement.style.setProperty("--fa-color", '');
-      document.documentElement.style.setProperty("--font-color", '');
-      document.documentElement.style.setProperty("--comments-color", '');
-      document.documentElement.style.setProperty("--nav-color", '');
-      document.documentElement.style.setProperty("--blog-color", '');
+      localStorage.setItem('theme', 'dark')
+      i.classList.remove('fa-moon-o');
+      i.classList.add('fa-sun-o');
+      document.documentElement.style.setProperty("--body-color", 'rgb(30,30,30)');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--comments-color", 'rgb(20, 25, 19)');
+      document.documentElement.style.setProperty("--nav-color", 'rgb(45,45,48)');
+      document.documentElement.style.setProperty("--blog-color", 'rgb(37,40,38)');
       nav.style.boxShadow = "";
+      blog.forEach(div => {
+        div.style.border = "";
+      });
     }
   });
+})
 }
 
 handleTheme();
@@ -43,13 +82,15 @@ const postsData = fetch(postUrl)
 Promise.all([usersData, postsData])
   .then(([userData, postData]) => {
     // Process the data from both APIs
+    
     const data = userData;
     appendPosts(data, postData);
     addImage(data, postData);
+    console.log(userData)
   })
   .catch(error => console.error('Error fetching data:', error));
 
-function appendPosts(data, postData) {
+function appendPosts(data) {
   const postsDiv = document.querySelector('.blog-container');
   let postIndex = 0;
   let newEl = "";
@@ -60,6 +101,8 @@ function appendPosts(data, postData) {
       postIndex++;
       const user = localStorage.getItem('user');
       if (user in obj) {
+        const userNmae = document.querySelector('.username')
+        userNmae.innerText = obj[user].username
         const largeProfile = document.querySelector('.p-image');
         largeProfile.setAttribute("src", `${obj[user].profile}`);
         const postObj = obj.post;
@@ -105,8 +148,9 @@ function addDeleteListeners(data) {
       if (userIndex !== -1) {
         const user = data[userIndex];
         const postArray = user.post;
-
+        
         if (postId >= 0 && postId < postArray.length) {
+          const idOnPost = postArray[postId]
           postArray.splice(postId, 1);
           
           fetch(`${userUrl}/${user.id}`, {
@@ -115,6 +159,19 @@ function addDeleteListeners(data) {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({ post: postArray })
+          })
+            .then(response => {
+              if (response.ok) {
+                console.log('Item deleted successfully');
+              } else {
+                console.log('Failed to delete item');
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+          fetch(`${postUrl}/${idOnPost.postId}`, {
+            method: 'DELETE',
           })
             .then(response => {
               if (response.ok) {

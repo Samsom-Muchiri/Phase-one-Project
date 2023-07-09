@@ -1,0 +1,59 @@
+{
+    "menuItems": [
+      {
+        "id": 1,
+        "name": "Cheese Burger",
+        "price": 659,
+        "image": "https://media.istockphoto.com/id/520410807/photo/cheeseburger.jpg?s=1024x1024&w=is&k=20&c=3GtPsBcuINgJqA63XtKA2iDVbyyb7vfgrQbX7rfzZ6U="
+      },
+      {
+        "id": 2,
+        "name": "Fries",
+        "price": 200,
+        "image": "https://media.istockphoto.com/id/1443054642/photo/french-fries-in-a-white-paper-box-isolated-on-white.jpg?s=1024x1024&w=is&k=20&c=vUtSvha1mCAmLdlWnBTAOmQa5qrbWWRUx-dhEne6HzA="
+      },
+      {
+        "id": 3,
+        "name": "Pancake",
+        "price": 650,
+        "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=480&q=80"
+      },
+      {
+        "id": 4,
+        "name": "Cupcake",
+        "price": 350,
+        "image": "https://media.istockphoto.com/id/949371994/photo/cupcake-with-a-blue-candle.jpg?s=1024x1024&w=is&k=20&c=3gm8pYzY9y4tMoMaSUgCPTZs7HYGTKP4fR_KeoY4lVM="
+      },
+      {
+        "id": 5,
+        "name": "Pilau",
+        "price": 700,
+        "image": "https://i.pinimg.com/564x/a6/4a/c4/a64ac48db57604274f93813672ed54c3.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Coffee",
+        "price": 150,
+        "image": "https://i.pinimg.com/564x/02/36/4a/02364a12617c535b729862bf02887415.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Samosa",
+        "price": 100,
+        "image": "https://i.pinimg.com/564x/91/a7/e3/91a7e37da5c864c84507d730b1a6383e.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Hotdog",
+        "price": 110,
+        "image": "https://i.pinimg.com/564x/b6/f6/9f/b6f69f519690051398ca93f051d9e9ae.jpg"
+      },
+      {
+        "id": 9,
+        "name": "Pizza",
+        "price": 1350,
+        "image": "https://i2-prod.mylondon.news/incoming/article21377859.ece/ALTERNATES/s615/1_Margherita_con_provola.jpg="
+      }
+    ]
+  }
+  

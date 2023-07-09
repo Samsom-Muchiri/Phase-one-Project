@@ -3,13 +3,33 @@
 const userUrl = "http://localhost:3000/user"
 const postUrl = "http://localhost:3000/posts" 
 //Fetch users data 
-fetch(userUrl)
+async function fetchFunction(){
+const data = await fetch(userUrl)
     .then(res => res.json())
     .then(data => {
-        usersData(data)
+     
     })
     .catch(error => console.error(error));
-
+}
+async function fetchData(userUrl) {
+  console.log('waiting')
+  try {
+    const response = await fetch(userUrl);
+    if (!response.ok) {
+      throw new Error('Error fetching data');
+    }
+    const data = await response.json();
+    console.log('complete')
+    usersData(data)
+    return data;
+  } catch (error) {
+    console.error(error);
+    // You can handle the error as per your requirements
+    throw error;
+  }
+  
+}
+fetchData(userUrl)
 CKEDITOR.replace('editor');
        var btn = document.querySelector('.btn')
        btn.addEventListener('click', _ =>{
@@ -41,43 +61,72 @@ function handlePostSRC(editorData){
 
 //Theme section
 
-function handleTheme(){
-    const themeButton = document.querySelector('.theme')
-    const nav = document.querySelector('.nav')
-    const blog = document.querySelectorAll('.new-blog')
-    themeButton.addEventListener('click', _ =>{
-        if(themeButton.classList.contains('fa-sun-o')){
-            themeButton.classList.remove('fa-sun-o')
-            themeButton.classList.add('fa-moon-o')
-            document.documentElement.style.setProperty("--body-color", '#f6f6f6')
-            document.documentElement.style.setProperty("--fa-color", 'rgb(57, 56, 56)')
-            document.documentElement.style.setProperty("--font-color", 'rgb(42, 40, 40)')
-            document.documentElement.style.setProperty("--comments-color", '#f6f6f6')
-            document.documentElement.style.setProperty("--nav-color", '#ececec')
-            document.documentElement.style.setProperty("--blog-color", '#ffffff')
-            nav.style.boxShadow = "2px 2px 6px rgba(0, 0, 0, 0.2)"
-            console.log(blog)
-            blog.forEach(div => {
-                div.style.border = "solid 1px rgba(128, 128, 128, 0.4)"
-            });
-        }else{
-            themeButton.classList.remove('fa-moon-o')
-            themeButton.classList.add('fa-sun-o')
-            document.documentElement.style.setProperty("--body-color", '')
-            document.documentElement.style.setProperty("--fa-color", '')
-            document.documentElement.style.setProperty("--font-color", '')
-            document.documentElement.style.setProperty("--comments-color", '')
-            document.documentElement.style.setProperty("--nav-color", '')
-            document.documentElement.style.setProperty("--blog-color", '')
-            nav.style.boxShadow = ""
-            console.log(blog)
-            blog.forEach(div => {
-                div.style.border = ""
-            });
-        }
-    })
-}
-
+function handleTheme() {
+    const nav = document.querySelector('.nav');
+    const blog = document.querySelectorAll('.blog');
+    const themeButton = document.querySelectorAll('.theme');
+    themeButton.forEach(i =>{
+    const storedTheme = localStorage.getItem('theme')
+    if(storedTheme === "dark"){
+        i.classList.remove('fa-moon-o');
+        i.classList.add('fa-sun-o');
+        document.documentElement.style.setProperty("--body-color", 'rgb(30,30,30)');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--comments-color", 'rgb(20, 25, 19)');
+      document.documentElement.style.setProperty("--nav-color", 'rgb(45,45,48)');
+      document.documentElement.style.setProperty("--blog-color", 'rgb(37,40,38)');
+        nav.style.boxShadow = "";
+        blog.forEach(div => {
+          div.style.border = "";
+        });
+    }else{
+      i.classList.remove('fa-sun-o');
+        i.classList.add('fa-moon-o');
+        document.documentElement.style.setProperty("--body-color", '#f6f6f6');
+        document.documentElement.style.setProperty("--fa-color", 'rgb(57, 56, 56)');
+        document.documentElement.style.setProperty("--font-color", 'rgb(42, 40, 40)');
+        document.documentElement.style.setProperty("--comments-color", '#f6f6f6');
+        document.documentElement.style.setProperty("--nav-color", '#ececec');
+        document.documentElement.style.setProperty("--blog-color", '#ffffff');
+        nav.style.boxShadow = "2px 2px 6px rgba(0, 0, 0, 0.2)";
+        blog.forEach(div => {
+          div.style.border = "solid 1px rgba(128, 128, 128, 0.4)";
+        });
+    }
+    i.addEventListener('click', _ => {
+      if (i.classList.contains('fa-sun-o')) {
+        localStorage.setItem('theme', 'light')
+        i.classList.remove('fa-sun-o');
+        i.classList.add('fa-moon-o');
+        document.documentElement.style.setProperty("--body-color", '#f6f6f6');
+        document.documentElement.style.setProperty("--fa-color", 'rgb(57, 56, 56)');
+        document.documentElement.style.setProperty("--font-color", 'rgb(42, 40, 40)');
+        document.documentElement.style.setProperty("--comments-color", '#f6f6f6');
+        document.documentElement.style.setProperty("--nav-color", '#ececec');
+        document.documentElement.style.setProperty("--blog-color", '#ffffff');
+        nav.style.boxShadow = "2px 2px 6px rgba(0, 0, 0, 0.2)";
+        blog.forEach(div => {
+          div.style.border = "solid 1px rgba(128, 128, 128, 0.4)";
+        });
+      } else {
+        localStorage.setItem('theme', 'dark')
+        i.classList.remove('fa-moon-o');
+        i.classList.add('fa-sun-o');
+        document.documentElement.style.setProperty("--body-color", 'rgb(30,30,30)');
+      document.documentElement.style.setProperty("--fa-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--font-color", 'rgb(218, 214, 214)');
+      document.documentElement.style.setProperty("--comments-color", 'rgb(20, 25, 19)');
+      document.documentElement.style.setProperty("--nav-color", 'rgb(45,45,48)');
+      document.documentElement.style.setProperty("--blog-color", 'rgb(37,40,38)');
+        nav.style.boxShadow = "";
+        blog.forEach(div => {
+          div.style.border = "";
+        });
+      }
+    });
+  })
+  }
 handleTheme()
 
 //post 
@@ -97,6 +146,7 @@ function usersData(data){
 
     const postBtn = document.querySelector('.btn2')
     postBtn.addEventListener('click', _ =>{
+      console.log("clicked")
         if (localStorage.getItem('user') !== null) {
             const userName = localStorage.getItem('user');
             const startIndex = 1
@@ -150,3 +200,5 @@ function usersData(data){
         }
     }
 }    
+/* localStorage.setItem('user', 'sam')
+console.log("set") */

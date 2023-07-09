@@ -48,6 +48,7 @@
 {
     font-size: large;
     position: relative;
+    color: white;
 }
 .delete
 {
@@ -70,6 +71,7 @@
 .fa-trash
 {
     pointer-events: none;
+    color: white;
 }
 .add-img
 {

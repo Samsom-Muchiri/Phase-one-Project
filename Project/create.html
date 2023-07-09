@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+    fetch('https://businessproposal001.000webhostapp.com/user-db.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Error fetching data');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Process the retrieved data
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the fetch request
+    console.error(error);
+  });
+
+  </script>
+</body>
+</html>
